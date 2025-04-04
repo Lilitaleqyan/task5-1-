@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table  tr td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+<form action="getCars" method="post">
+  <label for="count">Count cars</label>
+  <input type="text" id="count" name="count" min="1" max="5">
+  <button type="submit">Submit</button>
+</form>
+
+<table>
+    <tr th:each="car : ${cars}">
+      <td th:text="${car.getModel()}"></td>
+      <td th:text="${car.getModel()}"></td>
+      <td th:text="${car.getColor()}"></td>
+    </tr>
+</table>
+
+</body>
+</html>
