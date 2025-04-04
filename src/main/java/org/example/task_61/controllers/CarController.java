@@ -11,23 +11,5 @@ import java.util.List;
 
 @Controller
 public class CarController {
-    private final CarService carService;
 
-    public CarController(CarService carService) {
-        this.carService = carService;
-    }
-
-    @GetMapping("/getCars")
-    public String getCars() {
-        return "getCars";
-    }
-
-    @PostMapping("/getCars")
-    public String postCars(@RequestParam(defaultValue = "5") int count,
-                             ModelMap model){
-        List<Car> carList = carService.getCars(count);
-        model.addAttribute("cars", carList);
-        return "getCars";
-
-    }
 }
