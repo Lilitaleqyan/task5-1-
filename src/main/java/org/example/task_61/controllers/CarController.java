@@ -22,13 +22,13 @@ public class CarController {
         return "getCars";
     }
 
+
     @PostMapping("/getCars")
     public String postCars(@RequestParam(defaultValue = "5") int count,
                              ModelMap model){
         List<Car> carList = carService.getCars(count);
         model.addAttribute("cars", carList);
         return "getCars";
-
 
     }
 }
